@@ -18,7 +18,9 @@ namespace SuperHeroProject.Controllers
         // GET: Hero
         public ActionResult Index() //list of superheroes
         {
-            return View();
+            List<Superhero> s = db.Superheroes.ToList();
+
+            return View(s);
         }
 
         // GET: Hero/Details/5
@@ -43,11 +45,11 @@ namespace SuperHeroProject.Controllers
                 db.Superheroes.Add(superhero);
                 db.SaveChanges();
                
-                return RedirectToAction("Index", "Hero");  //where to redirect/create a page to redirect
+                return RedirectToAction("Index");  //where to redirect/create a page to redirect
             }
             catch
             {
-                return View();
+                return View(superhero);
             }
         }
 

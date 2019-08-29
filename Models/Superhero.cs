@@ -15,7 +15,5 @@ namespace SuperHeroProject.Models
         public string PrimaryAbility { get; set; }
         public string SecondaryAbility { get; set; }
         public string Catchphrase { get; set; }
-
-        Dictionary<int, Superhero> SuperHeroList;  
     }
 }
