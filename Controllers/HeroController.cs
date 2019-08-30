@@ -24,9 +24,12 @@ namespace SuperHeroProject.Controllers
         }
 
         // GET: Hero/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details()  //display a list of superheroes from db on details page
         {
-            return View();
+            //List<Superhero> s = db.Superheroes.ToList();
+            //db.Superheroes.Find(id); //parameters for Details(int id)
+            return RedirectToAction("Index");
+            //return View("Index");
         }
 
         // GET: Hero/Create
@@ -44,7 +47,6 @@ namespace SuperHeroProject.Controllers
             {
                 db.Superheroes.Add(superhero);
                 db.SaveChanges();
-               
                 return RedirectToAction("Index");  
             }
             catch
@@ -56,42 +58,61 @@ namespace SuperHeroProject.Controllers
         // GET: Hero/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var editSuperhero = db.Superheroes.Where(s => s.Id == id).SingleOrDefault();
+            
+            return View(editSuperhero);
         }
 
         // POST: Hero/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(Superhero superhero)
         {
             try
             {
-                // TODO: Add update logic here
+                var superheroInDb = db.Superheroes.Where(s => s.Id == superhero.Id).SingleOrDefault();
+                superheroInDb.SuperHeroName = superhero.SuperHeroName;
+                superheroInDb.AlterEgo = superhero.AlterEgo;
+                superheroInDb.PrimaryAbility = superhero.PrimaryAbility;
+                superheroInDb.SecondaryAbility = superhero.SecondaryAbility;
+                superheroInDb.Catchphrase = superhero.Catchphrase;
 
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
             catch
             {
-                return View();
+                return View("Index");
             }
         }
 
         // GET: Hero/Delete/5
-        public ActionResult Delete(Superhero superhero)
+        public ActionResult Delete(int id)
         {
-            db.Superheroes.Remove(superhero);
-            db.SaveChanges();
-            return View();
+            var deleteSuperhero = db.Superheroes.Find(id);
+            if (deleteSuperhero == null)
+            {
+                return HttpNotFound();
+            }
+            return View(deleteSuperhero);
         }
 
         // POST: Hero/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int id, Superhero superhero)
         {
             try
             {
-                // TODO: Add delete logic here
-
+                var deleteSuperhero = db.Superheroes.Find(id);
+                db.Superheroes.Remove(deleteSuperhero);
+                db.SaveChanges();
                 return RedirectToAction("Index");
+
+
+
+
+                // TODO: Add delete logic here
+                //db.Superheroes.Find();
+                //db.SaveChanges();
             }
             catch
             {
