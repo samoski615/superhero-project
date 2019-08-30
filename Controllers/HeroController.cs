@@ -16,7 +16,7 @@ namespace SuperHeroProject.Controllers
             db = new ApplicationDbContext();
         }
         // GET: Hero
-        public ActionResult Index() //list of superheroes
+        public ActionResult Index() //list of superheroes printed to index page
         {
             List<Superhero> s = db.Superheroes.ToList();
 
@@ -45,7 +45,7 @@ namespace SuperHeroProject.Controllers
                 db.Superheroes.Add(superhero);
                 db.SaveChanges();
                
-                return RedirectToAction("Index");  //where to redirect/create a page to redirect
+                return RedirectToAction("Index");  
             }
             catch
             {
