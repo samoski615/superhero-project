@@ -15,7 +15,7 @@ namespace SuperHeroProject.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "If you wanna know about me just ask.";
 
             return View();
         }

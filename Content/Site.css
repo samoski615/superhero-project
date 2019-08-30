@@ -22,3 +22,8 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.deadpool {
+    background-image: url("/Content/Deadpool-Desktop-Wallpapers-Hd-768x432.jpg");
+    background-repeat: no-repeat;
+}

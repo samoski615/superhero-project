@@ -16,7 +16,7 @@ namespace SuperHeroProject.Controllers
             db = new ApplicationDbContext();
         }
         // GET: Hero
-        public ActionResult Index() //list of superheroes printed to index page
+        public ActionResult Index() 
         {
             List<Superhero> s = db.Superheroes.ToList();
 
@@ -24,12 +24,10 @@ namespace SuperHeroProject.Controllers
         }
 
         // GET: Hero/Details/5
-        public ActionResult Details()  //display a list of superheroes from db on details page
+        public ActionResult Details(int id)  //display a list of superheroes from db on details page
         {
-            //List<Superhero> s = db.Superheroes.ToList();
-            //db.Superheroes.Find(id); //parameters for Details(int id)
-            return RedirectToAction("Index");
-            //return View("Index");
+            var viewSuperhero = db.Superheroes.Where(s => s.Id == id).Single();
+            return View(viewSuperhero);           
         }
 
         // GET: Hero/Create
