@@ -1346,7 +1346,7 @@ body {
     font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 14px;
     line-height: 1.42857143;
-    color: #888888;
+    color: #b30000;
     background-color: #060606
 }
 
@@ -5297,7 +5297,7 @@ a.badge:hover, a.badge:focus {
     padding-bottom: 30px;
     margin-bottom: 30px;
     color: inherit;
-    background-color: #151515
+    background-color: #fff
 }
 
     .jumbotron h1, .jumbotron .h1 {
@@ -7242,5 +7242,5 @@ a.list-group-item-danger.active {
     }
 
 .jumbotron h1, .jumbotron h2, .jumbotron h3, .jumbotron h4, .jumbotron h5, .jumbotron h6 {
-    color: #fff
+    color: #990000
 }
