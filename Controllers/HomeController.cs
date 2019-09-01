@@ -22,7 +22,7 @@ namespace SuperHeroProject.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Hello There!";
 
             return View();
         }

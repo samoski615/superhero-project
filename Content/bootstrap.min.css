@@ -1357,7 +1357,7 @@ input, button, select, textarea {
 }
 
 a {
-    color: #2a9fd6;
+    color: #fff;
     text-decoration: none
 }
 
@@ -3388,7 +3388,7 @@ textarea.input-lg, select[multiple].input-lg {
     }
 
     .btn:hover, .btn:focus, .btn.focus {
-        color: #ffffff;
+        color: #222222;
         text-decoration: none
     }
 
@@ -3410,7 +3410,7 @@ a.btn.disabled, fieldset[disabled] a.btn {
 }
 
 .btn-default {
-    color: #ffffff;
+    color: #4d0000
     background-color: #424242;
     border-color: #424242
 }
@@ -3422,7 +3422,7 @@ a.btn.disabled, fieldset[disabled] a.btn {
     }
 
     .btn-default:hover {
-        color: #ffffff;
+        color: #4d0000;
         background-color: #282828;
         border-color: #232323
     }
@@ -3452,8 +3452,8 @@ a.btn.disabled, fieldset[disabled] a.btn {
 
 .btn-primary {
     color: #ffffff;
-    background-color: #2a9fd6;
-    border-color: #2a9fd6
+    background-color: #800000;
+    border-color: #800000;
 }
 
     .btn-primary:focus, .btn-primary.focus {
@@ -3464,13 +3464,13 @@ a.btn.disabled, fieldset[disabled] a.btn {
 
     .btn-primary:hover {
         color: #ffffff;
-        background-color: #2180ac;
+        background-color: #4d0000;
         border-color: #1f79a3
     }
 
     .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
         color: #ffffff;
-        background-color: #2180ac;
+        background-color: #4d0000;
         background-image: none;
         border-color: #1f79a3
     }
